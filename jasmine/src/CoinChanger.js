@@ -3,8 +3,8 @@ function CoinChanger(amount, coins) {
       return [];
   } else {
       if (amount >= coins[0]) {
-          left = (amount - coins[0]);
-          return [coins[0]].concat(CoinChanger(left, coins));
+          remainder = (amount - coins[0]);
+          return [coins[0]].concat(CoinChanger(remainder, coins));
       } else {
           coins.shift();
           return CoinChanger(amount, coins);
